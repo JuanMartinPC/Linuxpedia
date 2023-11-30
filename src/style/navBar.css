@@ -1,0 +1,75 @@
+
+.nav-container {
+    background-color: #02152B;
+    padding: 30px 20px;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    position: fixed;
+  }
+  
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+    text-align: center;
+  }
+  
+  
+  .nav-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-left: 30px;
+  }
+  
+  .penguin-logo {
+    width: 40px;
+    height: auto;
+    margin-bottom: 6px;
+  }
+  
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+  }
+  
+  ul.nav-list {
+    margin-bottom: 0;
+  }
+
+  .nav-list li {
+    margin-right: 20px;
+    text-align: center;
+  }
+  
+  
+  .nav-section {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  
+  .nav-section:hover {
+    color: #ffc107;
+  }
+  
+  .fa-solid {
+    padding-top: 7px;
+    border-radius: 50%;
+    background: #2d6bb2;
+    height: 36px;
+    width: 38px;
+    align-items: center;
+  }
+
+  .toLogin{
+    color: white;
+  }
