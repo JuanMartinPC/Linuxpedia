@@ -98,13 +98,13 @@ button .add:hover {
   transition: 0.3s;
 }
 
-/* Botón crear */
+
 .ov-btn-grow-box {
   text-decoration: none;
   font-weight: bold;
-  background: #fff; /* color de fondo */
-  color: #02253d; /* color de fuente */
-  border: 2px solid #02253d; /* tamaño y color de borde */
+  background: #fff; 
+  color: #02253d; 
+  border: 2px solid #02253d; 
   padding: 5px 20px;
   position: relative;
   z-index: 1;
@@ -112,11 +112,11 @@ button .add:hover {
   display: inline-block;
 }
 .ov-btn-grow-box:hover {
-  color: #fff;/* color de fuente hover */
+  color: #fff;
 }
 .ov-btn-grow-box::after {
   content: "";
-  background: #02253d; /* color de fondo hover */
+  background: #02253d; 
   position: absolute;
   z-index: -1;
   padding: 16px 20px;
