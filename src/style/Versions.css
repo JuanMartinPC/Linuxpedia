@@ -1,55 +1,65 @@
 .versions {
-    margin-top: 200px;
-    border: solid white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: #02152B;
-    box-shadow: 0 3px 13px 1px white;
-    width: 900px;
-    height: min-content;
+  margin-top: 200px;
+  border: solid white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #02152b;
+  box-shadow: 0 3px 13px 1px white;
+  width: 900px;
+  height: min-content;
 }
 
 .Card {
-    transform: scale(.9);
-    max-width: 400px;
-    min-height: 580px;
-    margin-bottom: 20px;
-    color: #02152B;
+  transform: scale(0.9);
+  max-width: 400px;
+  min-height: 580px;
+  margin-bottom: 20px;
+  color: #02152b;
 }
 
 .card-container {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 5%;
-    flex-wrap: wrap;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5%;
+  flex-wrap: wrap;
 }
 
-.card-image{
-    width: 100%;
-    height: 200px;
+.card-image {
+  width: 100%;
+  height: 200px;
 }
 
 button {
-    width: 100px;
+  width: 100px;
 }
 
-.fixed{
-    display: block;
-    position: fixed;
-    bottom: 15px;
-    z-index: 100;
+.fixed {
+  display: block;
+  position: fixed;
+  bottom: 15px;
+  z-index: 100;
 }
 
-.form-container{
-    width: 100vh;
-    height: min-content;
-    background-color: #02152B;
-    border-radius: 15px;
-    box-shadow: 0 3px 13px 1px white;
-    padding: 20px 0;
-    transform: scale(.8);
+.form-container {
+  width: 100vh;
+  height: min-content;
+  background-color: #02152b;
+  border-radius: 15px;
+  box-shadow: 0 3px 13px 1px white;
+  padding: 20px 0;
+  transform: scale(0.8);
+}
+
+@media (max-width: 600px) {
+    .versions h2 {  
+        font-size: 18px;
+    }
+
+    .versions p {
+        font-size: 13px;
+    }
 }

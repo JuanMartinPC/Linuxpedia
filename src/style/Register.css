@@ -1,3 +1,8 @@
+.register-container {
+    background-color: #02152b;
+    height: 100vh;
+}
+
 .register-section{
     width: 100vw;
 }
@@ -7,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 10px;
+    row-gap: 8px;
 }
 
 .button-container{
@@ -18,5 +23,29 @@
 .logo{
     width: 100px;
     position: relative;
-    top: 50px;
+    top: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-section-create{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 8px;
+}
+
+.logo-create{
+    width: 40px;
+    position: relative;
+    top: 15px;
+}
+
+.register-section-create{
+    width: 100vw;
+    padding: 20px;
 }

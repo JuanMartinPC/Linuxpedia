@@ -53,4 +53,48 @@ section {
 
 h2 {
     margin-bottom: 5px;
+    font-weight: bold;
+}
+
+@media (max-width:1000px) {
+    .section-container {
+        max-width: 80vw;
+    }
+    .section-image {
+        display: none;
+    }
+    
+    .section-container-char {
+        max-width: 80vw;
+    }
+    
+    .versions {
+        max-width: 80vw;
+    }
+
+    .versions p {
+        padding: 0px 35px;
+    }
+}
+
+@media (max-width:800px) {
+    .section-container {
+        font-size: small;
+    }
+    
+    .text-container-char {
+        font-size: 11px;
+    }
+    
+    
+} 
+
+@media (max-width: 570px) {
+    .text-container-char {
+        font-size: 10px;
+    }
+
+    .versions {
+        font-size: 12px;
+    }
 }

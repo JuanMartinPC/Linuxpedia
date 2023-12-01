@@ -24,7 +24,7 @@ function Versions() {
           mejor se ajuste a sus necesidades.
         </p>
         <Link to='/add'>
-          <button>CREAR</button>
+        <a href="#" class="ov-btn-grow-box">CREAR</a>
         </Link>
 
         <div className="card-container">

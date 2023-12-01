@@ -1,4 +1,5 @@
 import { React, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import '../style/Register.css';
 
 function Create() {
@@ -31,8 +32,12 @@ function Create() {
 
   return (
     <>
-        <section className='register-section'>
-            <form className='form-section' ref={FormRef} onSubmit={handleFetch}>
+        <div className="register-container">
+        <Link to="/">
+          <img className="logo-create" src="src/img/linux_penguin.png" />
+        </Link>
+        <section className='register-section-create'>
+            <form className='form-section-create' ref={FormRef} onSubmit={handleFetch}>
                 <label htmlFor="name">Nombre</label>
                 <input name='name' type="text" />
 
@@ -51,9 +56,10 @@ function Create() {
                 <label htmlFor="image">Imagen</label>
                 <input name='image' type="text" />
 
-                <button type='submit'>Agregar</button>
+                <button type='submit' className='ov-btn-grow-box'>Agregar</button>
             </form>
         </section>
+        </div>
     </>
     
   )

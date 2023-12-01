@@ -1,75 +1,198 @@
-
 .nav-container {
-    background-color: #02152B;
-    padding: 30px 20px;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    position: fixed;
-  }
-  
-  
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 30px;
-    text-align: center;
-  }
-  
-  
-  .nav-logo a {
-    color: white;
+  background-color: #02152b;
+  padding: 30px 20px;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  position: fixed;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.nav-logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-logo {
+  padding: 10px 0px 10px 10px;
+}
+
+.penguin-logo {
+  width: 30px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+}
+
+ul.nav-list {
+  margin-bottom: 0;
+}
+
+.nav-list li {
+  margin-right: 20px;
+  text-align: center;
+}
+
+.nav-section {
     text-decoration: none;
-    font-size: 1.5em;
     font-weight: bold;
-    padding-left: 30px;
-  }
-  
-  .penguin-logo {
-    width: 40px;
-    height: auto;
-    margin-bottom: 6px;
-  }
-  
-  
-  .nav-list {
-    list-style: none;
-    display: flex;
-    margin-left: auto;
-  }
-  
-  ul.nav-list {
-    margin-bottom: 0;
+    display: block;
+    padding: 10px;
+    color: white
   }
 
-  .nav-list li {
-    margin-right: 20px;
-    text-align: center;
-  }
-  
-  
-  .nav-section {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  
   .nav-section:hover {
-    color: #ffc107;
-  }
-  
-  .fa-solid {
-    padding-top: 7px;
-    border-radius: 50%;
-    background: #2d6bb2;
-    height: 36px;
-    width: 38px;
-    align-items: center;
+    color: white;
+    background-color: #02253d;
+    box-shadow: 0 0 10px #02253d;
+    transition: 0.3s;
   }
 
-  .toLogin{
-    color: white;
+.open-menu {
+  display: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: #02152b;
+  color: #605d62;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+  color: white;
+  background-color: #02253d;
+  box-shadow: 0 0 10px #02253d;
+  transition: 0.3s;
+}
+
+button .add {
+  border: none;
+  outline: none;
+  background: #02152b;
+  color: #605d62;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button .add:hover {
+  color: white;
+  background-color: #02253d;
+  box-shadow: 0 0 10px #02253d;
+  transition: 0.3s;
+}
+
+/* Botón crear */
+.ov-btn-grow-box {
+  text-decoration: none;
+  font-weight: bold;
+  background: #fff; /* color de fondo */
+  color: #02253d; /* color de fuente */
+  border: 2px solid #02253d; /* tamaño y color de borde */
+  padding: 5px 20px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.ov-btn-grow-box:hover {
+  color: #fff;/* color de fuente hover */
+}
+.ov-btn-grow-box::after {
+  content: "";
+  background: #02253d; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0);
+  transition: all 0.3s ease;
+}
+.ov-btn-grow-box:hover::after {
+  transition: all 0.3s ease-out;
+  transform: scale(1, 1);
+}
+
+
+@media (max-width: 940px) {
+  .nav-list {
+    font-size: 13px;
   }
+}
+
+@media (max-width: 750px) {
+  .open-menu {
+    display: block;
+  }
+
+  .nav {
+    justify-content: space-between;
+    margin-right: 1px;
+  }
+
+  .nav-list {
+    font-size: 18px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    background-color: #02152b;
+    overflow-x: hidden;
+    transition: 0.3s;
+    align-items: end;
+  }
+
+
+  .nav-list.open {
+    width: 40vw;
+  }
+
+  .nav-list.false {
+    padding-left: 0;
+  }
+
+  .nav-section {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: #605d62;
+  }
+
+  .nav-section:hover {
+    color: white;
+    background-color: #02253d;
+    box-shadow: 0 0 10px #02253d;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 610px) {
+  .nav-list {
+    font-size: 15px;
+  }
+}
