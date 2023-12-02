@@ -4,8 +4,7 @@ import Login from "../components/Login.jsx";
 function LogIn() {
   return (
   <>
-      
-      <Login />
+        <Login />
   </>
   )
 }

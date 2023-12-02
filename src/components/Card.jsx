@@ -2,59 +2,74 @@ import {React, useRef, useState} from "react";
 import '../style/Versions.css';
 
 function Card({v}) {
+    
     const handleDelete = (e) => {
-        e.preventDefault();
-
-        fetch(`http://localhost:3000/api/delete?id=${v.id}`,
-        {
-        method: 'DELETE',
-        headers: {'Content-Type': 'application/json'}
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
-        window.location.replace('/')
+        const token = localStorage.getItem('token')
+        if (!token){
+          e.preventDefault()
+          alert('Inicia sesión para eliminar contenido.')
+        }
+        else {
+            fetch(`http://localhost:3000/api/delete?id=${v.id}`,
+            {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json', 'Authorization': token}
+            })
+            .then(response => console.log(response.json()))
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
+            window.location.replace('/')
+        }
     }
 
     const FormRef = useRef()
 
     const handleUpdate = (e) => {
-        e.preventDefault();
-
-        const updateDependece = {
-            "name": FormRef.current.name.value,
-            "ver": FormRef.current.version.value,
-            "launch_year": FormRef.current.launchyear.value,
-            "website": FormRef.current.website.value,
-            "info": FormRef.current.desc.value,
-            "image": FormRef.current.image.value
+        const token = localStorage.getItem('token')
+        if (!token){
+          e.preventDefault()
+          alert('Inicia sesión para eliminar contenido.')
         }
-        
-
-        fetch(`http://localhost:3000/api/update?id=${v.id}`,
-        {
-        method: 'PUT',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(updateDependece)
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
-        window.location.replace('/')
+        else {
+            const updateDependece = {
+                "name": FormRef.current.name.value,
+                "ver": FormRef.current.version.value,
+                "launch_year": FormRef.current.launchyear.value,
+                "website": FormRef.current.website.value,
+                "info": FormRef.current.desc.value,
+                "image": FormRef.current.image.value
+            }
+            
+            fetch(`http://localhost:3000/api/update?id=${v.id}`,
+            {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json', 'Authorization': token},
+            body: JSON.stringify(updateDependece)
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
+            window.location.replace('/')
+        }        
     }
 
     
     const [display, setDisplay] = useState(false)
     const displayForm = () => {
-        const form = document.getElementById(v.id);
-        if (form.classList.contains('d-none')){
-            form.classList.remove('d-none')
-            form.classList.add('fixed')
-            setDisplay(true)
-        } else if (form.classList.contains('fixed')){
-            form.classList.remove('fixed')
-            form.classList.add('d-none')
-            setDisplay(false)
+        const token = localStorage.getItem('token')
+        if (!token){
+          alert('Inicia sesión para editar contenido.')
+        }else{
+            const form = document.getElementById(v.id);
+            if (form.classList.contains('d-none')){
+                form.classList.remove('d-none')
+                form.classList.add('fixed')
+                setDisplay(true)
+            } else if (form.classList.contains('fixed')){
+                form.classList.remove('fixed')
+                form.classList.add('d-none')
+                setDisplay(false)
+            }
         }
     }
 

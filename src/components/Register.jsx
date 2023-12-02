@@ -29,6 +29,7 @@ function Register() {
       });
 
     alert("Te has registrado con exito!");
+    window.location.replace('/login')
   };
 
   return (
@@ -53,13 +54,10 @@ function Register() {
             <label htmlFor="password">Contraseña</label>
             <input type="password" name="password" />
 
-            <button type="submit" className="ov-btn-grow-box">
-              Hecho
-            </button>
+            <button type="submit" className="ov-btn-grow-box">Hecho</button>
+            
             <div className="btn-group">
-              <Link to="/Login">
-                <a className="nav-section">Iniciar sesión</a>
-              </Link>
+              <Link to="/Login"><a className="nav-section">Ya tengo una cuenta</a></Link>
             </div>
           </form>
         </section>

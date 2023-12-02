@@ -1,14 +1,15 @@
-import { React, useRef } from 'react';
+import { React, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/Register.css';
 
+
 function Create() {
     
-    const FormRef = useRef() 
-
+    const FormRef = useRef()    
+  
+    
     const handleFetch = (e) => {
         e.preventDefault();
-
         const newDependece = {
             "name": FormRef.current.name.value,
             "ver": FormRef.current.version.value,
@@ -18,10 +19,15 @@ function Create() {
             "image": FormRef.current.image.value
         }
 
+        const token = localStorage.getItem('token');
+
         fetch('http://localhost:3000/api/add',
         {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token
+        },
         body: JSON.stringify(newDependece)
         })
         .then(response => response.json())

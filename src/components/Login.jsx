@@ -1,6 +1,5 @@
-import React from "react";
+import {React, useRef} from "react";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
 import "../style/Register.css";
 
 function Login() {
@@ -21,15 +20,17 @@ function Login() {
     });
 
     const text = await response.text();
-    //const token = text.split('"')[7];
+    const clearToken = text.split('"')[7];
     const res = text.split('"')[3];
-    console.log(res);
+
+    localStorage.setItem('token', clearToken)
+    
     if (res !== "Usuario autorizado.") {
       const render = document.getElementById("msj");
       render.innerText =
         "La direccion de correo o la contraseña son incorrectas.";
     } else {
-      window.location.replace("/");
+      return window.location.replace("/")
     }
   };
 

@@ -6,8 +6,15 @@ import linuxContext from "../context/linuxContext.jsx";
 import Card from "../components/Card.jsx";
 
 function Versions() {
-
   const { version } = useContext(linuxContext);
+
+  const checkToken = (e) => {
+    const token = localStorage.getItem('token')
+    if (!token){
+      e.preventDefault()
+      alert('Inicia sesión para aportar contenido.')
+    }
+  }
 
   return (
     <section id="versions" className="versions">
@@ -24,7 +31,7 @@ function Versions() {
           mejor se ajuste a sus necesidades.
         </p>
         <Link to='/add'>
-        <a href="#" class="ov-btn-grow-box">CREAR</a>
+        <a href="#" class="ov-btn-grow-box" onClick={checkToken}>CREAR</a>
         </Link>
 
         <div className="card-container">
