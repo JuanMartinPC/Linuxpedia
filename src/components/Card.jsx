@@ -114,6 +114,7 @@ function Card({v}) {
             <h4><code> Version: {v.ver}</code></h4>
             <p id="info" className="card-text">{v.info}</p>
             </div>
+            <h5><code>Año de lanzamiento: {v.launch_year}</code></h5>
             <a href={v.website} target="_blank" className="btn btn-outline-secondary round text">
                 Sitio Web
             </a>

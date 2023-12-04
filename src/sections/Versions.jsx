@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style/Versions.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import linuxContext from "../context/linuxContext.jsx";
 import Card from "../components/Card.jsx";
+import Search from "../components/Search.jsx";
 
 function Versions() {
-  const { version } = useContext(linuxContext);
+  const { version, searchResults } = useContext(linuxContext);
 
   const checkToken = (e) => {
     const token = localStorage.getItem('token')
@@ -15,6 +16,7 @@ function Versions() {
       alert('Inicia sesión para aportar contenido.')
     }
   }
+
 
   return (
     <section id="versions" className="versions">
@@ -33,10 +35,10 @@ function Versions() {
         <Link to='/add'>
         <a href="#" class="ov-btn-grow-box" onClick={checkToken}>CREAR</a>
         </Link>
-
+        <Search />
         <div className="card-container">
         {
-          version.map((v) => (<Card v={v}/>))
+         searchResults === undefined ? version.map((v) => (<Card v={v}/>)) : searchResults.length < 1 ? <h3>Lo sentimos, no tenemos información que coincida con lo que buscas. 🙁</h3> : searchResults.map((v) => (<Card v={v}/>))
         }
         </div>
       </div>
